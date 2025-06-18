@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 type AuthState = {
-  register: (email: string, password: string, name: string) => Promise<Boolean>;
+  register: (email: string, password: string, name: string) => Promise<boolean>;
   login: (email: string, password: string) => any;
   logout: () => Promise<void>;
 };

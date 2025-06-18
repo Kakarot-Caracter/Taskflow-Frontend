@@ -1,5 +1,4 @@
 import { AddButton } from "./components/buttons/AddButton";
-import { UserCard } from "./components/cards/UserCard";
 
 import { TaskFilter } from "./components/TaskFIlter";
 import { OverviewClient } from "./components/wrappers/OverviewClient";
