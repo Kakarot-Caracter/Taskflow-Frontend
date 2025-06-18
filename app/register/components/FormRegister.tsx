@@ -14,14 +14,7 @@ export default function FormRegister() {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm({
-    defaultValues: {
-      name: "Giovanni Martinez",
-      email: "itachimartinez0@gmail.com",
-      password: "12345678",
-      confirmPassword: "12345678",
-    },
-  });
+  } = useForm();
 
   const router = useRouter();
 
