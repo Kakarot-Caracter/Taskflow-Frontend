@@ -2,11 +2,11 @@ import { create } from "zustand";
 
 type AuthState = {
   register: (email: string, password: string, name: string) => Promise<boolean>;
-  login: (email: string, password: string) => any;
+  login: (email: string, password: string) => Promise<boolean>;
   logout: () => Promise<void>;
 };
 
-export const useAuthStore = create<AuthState>((set) => ({
+export const useAuthStore = create<AuthState>(() => ({
   register: async (name, email, password) => {
     const res = await fetch("http://localhost:3001/auth/register", {
       method: "POST",
