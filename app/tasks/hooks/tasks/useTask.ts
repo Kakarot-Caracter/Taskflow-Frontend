@@ -2,12 +2,13 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { TaskI } from "../../shared";
+import { API_URL } from "../../shared/constants/url-api";
 
 export const useTasks = () =>
   useQuery<TaskI[], Error>({
     queryKey: ["tasks"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:3001/task", {
+      const res = await fetch(`${API_URL}/task`, {
         credentials: "include",
       });
       if (!res.ok) {

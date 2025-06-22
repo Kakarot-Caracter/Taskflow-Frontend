@@ -1,7 +1,6 @@
-// src/hooks/useCreateTask.ts
-
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { TaskI } from "../../shared";
+import { API_URL } from "../../shared/constants/url-api";
 
 export type NewTask = Omit<TaskI, "id">;
 
@@ -10,7 +9,7 @@ export const useCreateTask = () => {
 
   return useMutation<TaskI, Error, NewTask>({
     mutationFn: async (newTask: NewTask) => {
-      const res = await fetch("http://localhost:3001/task", {
+      const res = await fetch(`${API_URL}/task`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

@@ -7,6 +7,7 @@ import { TaskMockup } from "./components/TaskMockup";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import AppIcon from "./components/AppIcon";
+import { API_URL } from "./tasks/shared/constants/url-api";
 
 export default function Home() {
   return (

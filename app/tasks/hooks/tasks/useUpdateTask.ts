@@ -15,7 +15,7 @@ export const useUpdateTask = () => {
     mutationFn: async ({ id, ...task }) => {
       console.log(task);
 
-      const res = await fetch(`http://localhost:3001/task/${id}`, {
+      const res = await fetch(`${API_URL}/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(task),

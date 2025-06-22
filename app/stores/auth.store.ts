@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { API_URL } from "../tasks/shared/constants/url-api";
 
 type AuthState = {
   register: (email: string, password: string, name: string) => Promise<boolean>;
@@ -8,7 +9,7 @@ type AuthState = {
 
 export const useAuthStore = create<AuthState>(() => ({
   register: async (name, email, password) => {
-    const res = await fetch("http://localhost:3001/auth/register", {
+    const res = await fetch(`${API_URL}/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +31,7 @@ export const useAuthStore = create<AuthState>(() => ({
   },
 
   login: async (email, password) => {
-    const res = await fetch("http://localhost:3001/auth/login", {
+    const res = await fetch(`${API_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -40,8 +41,6 @@ export const useAuthStore = create<AuthState>(() => ({
     if (res.ok) {
       return true;
     }
-
-    console.log(res.json());
 
     return false;
   },

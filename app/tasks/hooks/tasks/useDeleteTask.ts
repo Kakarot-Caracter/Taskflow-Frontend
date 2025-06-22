@@ -1,12 +1,13 @@
 // src/hooks/useDeleteTask.ts
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { API_URL } from "../../shared/constants/url-api";
 
 export const useDeleteTask = () => {
   const qc = useQueryClient();
 
   return useMutation<void, Error, number>({
     mutationFn: async (id) => {
-      const res = await fetch(`http://localhost:3001/task/${id}`, {
+      const res = await fetch(`${API_URL}/task/${id}`, {
         method: "DELETE",
         credentials: "include",
       });
