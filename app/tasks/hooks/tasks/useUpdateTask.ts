@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { TaskI } from "../../shared";
+import { API_URL } from "../../shared/constants/url-api";
 
 type UpdatableFields = Pick<
   TaskI,
@@ -13,8 +14,6 @@ export const useUpdateTask = () => {
 
   return useMutation<TaskI, Error, UpdateTask>({
     mutationFn: async ({ id, ...task }) => {
-      console.log(task);
-
       const res = await fetch(`${API_URL}/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
