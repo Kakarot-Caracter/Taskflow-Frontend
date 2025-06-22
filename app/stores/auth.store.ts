@@ -13,7 +13,7 @@ export const useAuthStore = create<AuthState>(() => ({
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include", // 👈 necesario para recibir la cookie
+      credentials: "include",
       body: JSON.stringify({
         name,
         email,
@@ -25,6 +25,7 @@ export const useAuthStore = create<AuthState>(() => ({
       return true;
     }
 
+    console.log(res.json());
     return false;
   },
 
@@ -36,11 +37,13 @@ export const useAuthStore = create<AuthState>(() => ({
       credentials: "include",
     });
 
-    if (!res.ok) {
-      return false;
+    if (res.ok) {
+      return true;
     }
 
-    return true;
+    console.log(res.json());
+
+    return false;
   },
 
   logout: async () => {

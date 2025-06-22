@@ -3,6 +3,7 @@
 import { useAuthStore } from "@/app/stores/auth.store";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function FormLogin() {
@@ -16,12 +17,20 @@ export default function FormLogin() {
 
   const loginUser = useAuthStore((state) => state.login);
 
+  const [loginError, setLoginError] = useState(false);
+
   const onSubmit = handleSubmit(async (data) => {
     const { email, password } = data;
 
     const succes = await loginUser(email, password);
 
-    if (succes) router.push("/tasks");
+    if (!succes) {
+      setLoginError(true);
+      return;
+    }
+    setLoginError(false);
+
+    router.push("/tasks");
   });
 
   return (
@@ -50,6 +59,10 @@ export default function FormLogin() {
           {...register("password", { required: true })}
         />
       </div>
+
+      {loginError ? (
+        <span className="text-red-600">Credenciales invalidas. </span>
+      ) : null}
 
       <Button asChild variant={"gradient"}>
         <button type="submit">Sign In</button>
