@@ -34,8 +34,8 @@ export const useAuthStore = create<AuthState>(() => ({
     const res = await fetch(`${API_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
       credentials: "include",
+      body: JSON.stringify({ email, password }),
     });
 
     if (res.ok) {
@@ -46,7 +46,7 @@ export const useAuthStore = create<AuthState>(() => ({
   },
 
   logout: async () => {
-    await fetch("http://localhost:3001/auth/logout", {
+    await fetch(`${API_URL}/auth/logout`, {
       method: "POST",
       credentials: "include",
     });
