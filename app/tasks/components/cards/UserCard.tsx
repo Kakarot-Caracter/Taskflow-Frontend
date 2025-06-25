@@ -3,6 +3,7 @@
 import { LogOut, User } from "lucide-react";
 import { useUsers } from "../../hooks/users/useUser";
 import { useRouter } from "next/navigation";
+import { API_URL } from "../../shared/constants/url-api";
 
 export const UserCard = () => {
   const router = useRouter();
