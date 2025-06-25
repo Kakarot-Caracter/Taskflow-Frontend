@@ -13,7 +13,7 @@ export const UserCard = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:3001/auth/logout", {
+     await fetch(`${API_URL}/auth/logout`, {
         method: "POST",
         credentials: "include",
       });
