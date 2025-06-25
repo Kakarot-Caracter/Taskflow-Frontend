@@ -14,7 +14,7 @@ export const useUpdateTask = () => {
 
   return useMutation<TaskI, Error, UpdateTask>({
     mutationFn: async ({ id, ...task }) => {
-      const res = await fetch(`${API_URL}/${id}`, {
+      const res = await fetch(`${API_URL}/task/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(task),
