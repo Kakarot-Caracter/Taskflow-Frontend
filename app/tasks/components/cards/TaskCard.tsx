@@ -46,7 +46,7 @@ export const TaskCard = ({
   onDelete,
   onToggle,
 }: TaskCardProps) => {
-  const isOverdue = task.dueDate > new Date().toISOString().split("T")[0];
+  const isOverdue = task.dueDate < new Date().toISOString().split("T")[0];
 
   const priorityConfig =
     PRIORITY_CONFIG[task.priority.toLowerCase() as Priority];
