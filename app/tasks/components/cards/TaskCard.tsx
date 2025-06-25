@@ -99,7 +99,7 @@ export const TaskCard = ({
       </div>
 
       {task.description && (
-        <p className="  w-full text-gray-600 text-xs whitespace-normal break-all overflow-hidden ">
+        <p className="  w-full text-center text-gray-600 text-xs whitespace-normal break-all overflow-hidden ">
           {task.description}
         </p>
       )}
