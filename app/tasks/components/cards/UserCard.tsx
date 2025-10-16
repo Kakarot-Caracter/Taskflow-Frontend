@@ -3,6 +3,7 @@
 import { LogOut, User } from "lucide-react";
 import { useUsers } from "../../hooks/users/useUser";
 import { useRouter } from "next/navigation";
+import { API_URL } from "../../shared/constants/url-api";
 
 export const UserCard = () => {
   const router = useRouter();
@@ -13,7 +14,7 @@ export const UserCard = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:3001/auth/logout", {
+      await fetch(`${API_URL}/auth/logout`, {
         method: "POST",
         credentials: "include",
       });
