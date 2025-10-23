@@ -50,7 +50,7 @@ export const TaskFilter = () => {
         }
         className="border border-gray-300 rounded p-2 text-sm"
       >
-        <option value="">Todas las categorías</option>
+        <option value="">All Categories</option>
         {CATEGORIES.map((cat) => (
           <option key={cat} value={cat}>
             {cat}
@@ -66,8 +66,8 @@ export const TaskFilter = () => {
         }
         className="border border-gray-300 rounded p-2 text-sm"
       >
-        <option value="date">Por fecha</option>
-        <option value="priority">Por prioridad</option>
+        <option value="date">For Date</option>
+        <option value="priority">For Priority</option>
       </select>
     </div>
   );

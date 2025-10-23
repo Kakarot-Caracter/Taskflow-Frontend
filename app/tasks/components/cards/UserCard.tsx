@@ -1,16 +1,14 @@
 "use client";
 
 import { LogOut, User } from "lucide-react";
-import { useUsers } from "../../hooks/users/useUser";
+import { useUser } from "../../hooks/users/useUser";
 import { useRouter } from "next/navigation";
 import { API_URL } from "../../shared/constants/url-api";
 
 export const UserCard = () => {
   const router = useRouter();
 
-  const { data } = useUsers();
-
-  const user = data?.[0];
+  const { data: user } = useUser();
 
   const handleLogout = async () => {
     try {
