@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://taskflow-backend-production-6b16.up.railway.app/:path*"
+    }
+  ]
+}

@@ -93,7 +93,7 @@ export const Tasks = () => {
     grid
     grid-cols-1       /* 1 columna en móvil */
     sm:grid-cols-2    /* 2 cols desde 640px */
-    lg:grid-cols-3    /* 3 cols desde 1024px */
+    lg:grid-cols-4    /* 3 cols desde 1024px */
     gap-4
     items-stretch     /* ¡ESTO! */ "
     >

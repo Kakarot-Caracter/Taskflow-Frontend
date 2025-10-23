@@ -67,4 +67,8 @@ The project follows a standard Next.js App Router structure:
 │   └── styles/           # Global styles
 ├── public/               # Static assets
 └── ...                   # Configuration files
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 5c99001f817fb68ed61bcd96268d201c773dc729
