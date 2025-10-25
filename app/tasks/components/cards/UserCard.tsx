@@ -12,11 +12,7 @@ export const UserCard = () => {
 
   const handleLogout = async () => {
     try {
-<<<<<<< HEAD
       await fetch(`${API_URL}/auth/logout`, {
-=======
-     await fetch(`${API_URL}/auth/logout`, {
->>>>>>> 5c99001f817fb68ed61bcd96268d201c773dc729
         method: "POST",
         credentials: "include",
       });
